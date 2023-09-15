@@ -20,7 +20,7 @@
          <div class="form-group"></div>
          <div class="w-30">
            
-           <!-- E-mail -->
+           <!-- Status -->
          <label>Status:</label>
            <b-form-group>
            <b-form-checkbox-group v-model="form.status">
@@ -35,24 +35,24 @@
        <div class="d-flex justify-content-between mb-3">
          <div class="w-30">
            <label for="cpf">CPF:</label>
-           <input class="form-control" type="number" name="cpf" id="cpf" placeholder="000.000.000-00">
+           <input class="form-control" type="text" name="cpf" id="cpf" placeholder="000.000.000-00" inputmode="numeric" pattern="[0-9]*">
          </div>
          <div class="form-group"></div>
    
          <!-- RG -->
          <div class="w-30">
            <label for="rg">RG:</label>
-           <input class="form-control" type="number" name="rg" id="rg" placeholder="0000000000">
+           <input class="form-control" type="text" name="rg" id="rg" placeholder="0000000000" inputmode="numeric" pattern="[0-9]*">
          </div>
          <div class="form-group"></div>
    
          <!-- Data de Nascimento -->
          <div class="w-30">
-           <label for="dataDeNascimento">Data de Nascimento:</label>
-           <input class="dataNascimento" type="number" name="data" id="dataNascimento" placeholder="dd/mm/yyyy">
-         </div>
-         <div class="form-group"></div>
-       </div>
+          <label for="dataDeNascimento">Data de Nascimento:</label>
+            <input class="dataNascimento form-control" type="text" name="data" id="dataNascimento" placeholder="dd/mm/yyyy" pattern="\d{2}/\d{2}/\d{4}">
+          </div>
+          <div class="form-group"></div>
+          </div>
        <hr />
    
        <!-- Endereço -->

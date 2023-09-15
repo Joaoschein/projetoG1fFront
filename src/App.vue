@@ -8,7 +8,7 @@
     </nav>
 
     <div class="container mt-4">
-      <!-- Conteúdo do componente aqui -->
+      <!-- Conteúdo do componente  -->
       <router-view></router-view>
     </div>
 
@@ -57,10 +57,10 @@ nav {
 nav a {
   color: white;
   text-decoration: none;
-  margin-right: 20px;
+  margin-right: 40px;
 
   .welcome-message-top {
-  margin-top: 20px; /* Ajuste o valor de acordo com sua preferência */
+  margin-top: 40px; /* Ajuste o valor de acordo com sua preferência */
 }
 }
 </style>
