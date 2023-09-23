@@ -8,11 +8,9 @@
     </nav>
 
     <div class="container mt-4">
-      <!-- Conteúdo do componente  -->
       <router-view></router-view>
     </div>
 
-    <!-- Conteúdo da página inicial, condicionado à página atual -->
     <div class="centered-image" v-if="$route.path === '/'">
     <img src="@/assets/logo.jpg" alt="Imagem de boas-vindas" class="fullscreen-image" />
     <h3 class="text-center mb-4 welcome-message-top">Bem-vindo ao Hotel Anywhere </h3>
@@ -21,7 +19,7 @@
 </template>
 
 <style>
-/* Estilos para a imagem em tela cheia */
+/* imagem tela cheia */
 .fullscreen-image {
   position: fixed;
   top: 0;
@@ -29,10 +27,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1; /* Coloca a imagem atrás do conteúdo */
+  z-index: -1; /* imagem atrás do conteúdo */
 }
 
-/* Estilos para a mensagem "Bem-vindo" */
+/* mensagem "Bem-vindo" */
 .welcome-message {
   position: absolute;
   top: 50%;
@@ -44,10 +42,10 @@
   background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
   padding: 20px;
   border-radius: 5px;
-  z-index: 1; /* Coloca a mensagem sobre a imagem */
+  z-index: 1; /*mensagem sobre a imagem */
 }
 
-/* Estilos para a barra de navegação */
+/* barra de navegação */
 nav {
   background-color: #333;
   color: white;
@@ -60,7 +58,7 @@ nav a {
   margin-right: 40px;
 
   .welcome-message-top {
-  margin-top: 40px; /* Ajuste o valor de acordo com sua preferência */
+  margin-top: 40px; 
 }
 }
 </style>

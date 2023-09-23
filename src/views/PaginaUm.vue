@@ -4,7 +4,7 @@
       <h3 class="text-center mb-4">Visualize aqui os tipos de quartos</h3>
       <hr />
 
-      <!-- Nomes dos quartos separados verticalmente -->
+      <!-- quartos -->
       <div class="room-names">
         <span class="room-name"> Quarto 1
           <hr />
@@ -45,7 +45,7 @@
       </div>
     </div>
     
-    <!-- Botão para voltar à tela inicial -->
+    <!-- Botão voltar à tela inicial -->
     <router-link to="/" class="btn btn-dark mx-">Voltar</router-link>
   </div>
 </template>
@@ -57,19 +57,18 @@ export default {
 </script>
 
 <style scoped>
-/* Estilos se precisar */
 
-/* Estilos para a linha vertical */
+/*linha vertical */
 .room-names {
   display: flex;
-  align-items: flex-start; /* nomes dos quartos na parte superior das barras */
+  align-items: flex-start; 
   justify-content: center;
   margin-top: 60px; 
-  position: relative; /* posicionamento absoluto dos nomes */
+  position: relative; /* posicionamento dos nomes */
 }
 
 .room-name {
-  margin: 0 10px; /* Espaço entre os nomes dos quartos */
+  margin: 0 10px; /*  nomes dos quartos */
   text-align: center; /* Centralizar o texto */
   display: flex;
   flex-direction: column;
@@ -77,13 +76,13 @@ export default {
 }
 
 .room-name img {
-  width: 250px; /* Ajuste o tamanho da imagem conforme necessário */
-  height: auto; /* Mantenha a proporção da imagem */
+  width: 250px; 
+  height: auto; 
 }
 
 .vertical-bar {
-  border-left: 1px solid #1f1e1e; /* Estilo da linha vertical */
-  height: 60vh; /* Altura da linha vertical até quase o final da tela */
-  margin: 0 100px; /* Espaço entre a linha vertical e os nomes dos quartos */
+  border-left: 1px solid #1f1e1e;
+  height: 60vh; 
+  margin: 0 100px; 
 }
 </style>

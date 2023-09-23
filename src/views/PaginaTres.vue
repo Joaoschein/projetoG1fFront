@@ -3,14 +3,14 @@
     <h3 class="text-center mb-4">Finalize aqui a hospedagem do cliente</h3>
     <hr />
 
-   <!-- Campo do Nome -->
+   <!-- Nome -->
     <div class="d-flex justify-content-between mb-3">
   <div class="w-30">
     <label for="nome">Nome:</label>
     <input class="form-control" type="text" name="nome" id="nome" placeholder="Digite o nome do hóspede aqui">
   </div>
 
-  <!-- Campo do Número do Quarto -->
+  <!-- Número do Quarto -->
   <div class="w-30">
     <label for="numeroQuarto">Número do quarto:</label>
     <input class="form-control" type="text" name="numeroQuarto" id="numeroQuarto" placeholder="Digite o número do quarto aqui">
@@ -49,7 +49,7 @@
   },
   methods: {
     salvarFormulario() {
-      //  lógica de salvamento aqui
+      
       alert("CheckOut finalizado!");
     }
   }
@@ -61,10 +61,10 @@
      width: 30%;
    }
    
-   /* Estilizando o placeholder */
+   /* placeholder */
    ::placeholder {
      font-style: italic;
-     font-size: 14px; /* Defina o tamanho desejado */
+     font-size: 14px; 
      color: #3d3c3c;
    }
     </style>

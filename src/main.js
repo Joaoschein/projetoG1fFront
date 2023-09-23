@@ -13,15 +13,15 @@ Vue.use(BootstrapVue);
 // Router
 Vue.use(VueRouter);
 
-// Importando as rotas
+// Importação das rotas
 import routes from './router/routes';
 
 const router = new VueRouter({
-  routes, // Passando suas rotas aqui
-  mode: 'history', // Use o modo de histórico para URLs sem #
+  routes, // rotas aqui
+  mode: 'history', //  histórico para URLs sem #
 });
 
 new Vue({
   render: (h) => h(App),
-  router, // Adicione o router ao Vue
+  router, // Adicionando o router ao Vue
 }).$mount('#app');

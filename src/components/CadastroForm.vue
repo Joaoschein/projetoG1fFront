@@ -103,25 +103,25 @@
        return {
          exibirMensagem: false,
          form: {
-           // propriedades do formulario
+           // formulario
          }
        };
      },
      methods: {
        salvarFormulario() {
-         //  simular o salvamento
+         //  simular o salvamento 
          this.onSubmit();
    
-         // Exibe a mensagem de sucesso
+         // mensagem de sucesso
          this.exibirMensagem = true;
    
          
          setTimeout(() => {
            this.exibirMensagem = false;
-         }, 3000); // Esconde após 3 segundos 
+         }, 3000); // Esconder após 3 segundos 
        },
        onSubmit() {
-         // Salvamento do formulário
+         // Salvamento do formulário aqui
          alert("Formulário salvo!");
        }
      }
@@ -133,10 +133,10 @@
      width: 30%;
    }
    
-   /* Estilizando o placeholder */
+   /* placeholder */
    ::placeholder {
      font-style: italic;
-     font-size: 14px; /* Defina o tamanho desejado */
+     font-size: 14px;
      color: #3d3c3c;
    }
    
