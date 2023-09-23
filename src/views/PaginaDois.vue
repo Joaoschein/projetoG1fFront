@@ -20,38 +20,38 @@
     <h4 class="text-center mb-4 custom-heading">Dados do Acompanhante</h4>
     <div class="d-flex justify-content-between mb-3">
       <div class="w-30">
-        <label for="nome2">Nome do Acompanhante:</label>
-        <input class="form-control" type="text" name="Acompanhante" id="Acompanhante" placeholder="Digite aqui o nome do acompanhante">
+        <label for="nomeAcompanhante">Nome do Acompanhante:</label>
+        <input class="form-control" type="text" name="nomeAcompanhante" id="nomeAcompanhante" placeholder="Digite aqui o nome do acompanhante">
       </div>
       <div class="w-30">
-        <label for="cpf2">CPF:</label>
-        <input class="form-control" type="text" name="cpf" id="cpf" placeholder="000.000.000-00" inputmode="numeric" pattern="[0-9]*">
+        <label for="cpfAcompanhante">CPF do Acompanhante:</label>
+        <input class="form-control" type="text" name="cpfAcompanhante" id="cpfAcompanhante" placeholder="000.000.000-00" inputmode="numeric" pattern="[0-9]*">
       </div>
     </div>
     <hr />
 
-     <!-- Quarto escolhido e Check in -->
-      <h4 class="text-center mb-4 custom-heading">Quarto Escolhido</h4>
-        <div class="d-flex justify-content-between mb-3">
+    <!-- Quarto escolhido e Check in -->
+    <h4 class="text-center mb-4 custom-heading">Quarto Escolhido</h4>
+    <div class="d-flex justify-content-between mb-3">
+      <div class="w-30">
+        <label for="numeroQuarto">Quarto 1, 2 ou 3:</label>
+        <input class="form-control" type="text" name="numeroQuarto" id="numeroQuarto" placeholder="Digite aqui o número do quarto" inputmode="numeric" pattern="[0-9]*">
+      </div>
 
-      <!-- Campo do número do quarto -->
-        <div class="w-30">
-          <label for="numeroQuarto">Quarto 1, 2 ou 3:</label>
-      <input class="form-control" type="text" name="numeroQuarto" id="numeroQuarto" placeholder="Digite aqui o número do quarto" inputmode="numeric" pattern="[0-9]*">
-     </div>
+      <div class="w-30">
+        <label for="dataCheckIn">Data de Check-in:</label>
+        <input class="form-control" type="date" name="dataCheckIn" id="dataCheckIn">
+      </div>
+    </div>
 
-     
-
-       <!-- Campo de Check in -->
-        <div class="w-30">
-            <b-form-group>
-            <b-form-checkbox-group v-model="form.status">
-        <b-form-checkbox value="active">Check in</b-form-checkbox>
-      </b-form-checkbox-group>
-    </b-form-group>
-  </div>
-</div>
-
+    <!-- Campo de Check in Calendário-->
+    <div class="w-30">
+      <b-form-group>
+        <b-form-checkbox-group v-model="form.status">
+          <b-form-checkbox value="active">Check in</b-form-checkbox>
+        </b-form-checkbox-group>
+      </b-form-group>
+    </div>
 
     <!-- Botões -->
     <div class="d-flex justify-content-between mt-4">
@@ -60,48 +60,54 @@
     </div>
   </div>
 </template>
- 
- <script>
- export default {
-   data() {
-     return {
-       exibirMensagem: false,
-       form: {
-         // propriedades do formulario
-       }
-     };
-   },
-   methods: {
-     salvarFormulario() {
-       //  simular o salvamento aqui
-       this.onSubmit();
- 
-       // mensagem de sucesso
-       this.exibirMensagem = true;
- 
-       
-       setTimeout(() => {
-         this.exibirMensagem = false;
-       }, 3000); // Esconde após 3 segundos 
-     },
-     onSubmit() {
-       // Salvamento do formulário
-       alert("Reserva Realizada!");
-     }
-   }
- };
- </script>
- 
- <style>
-  .w-30 {
-     width: 30%;
-   }
-   
-   /* Estilizando o placeholder */
-   ::placeholder {
-     font-style: italic;
-     font-size: 14px; /* Defina o tamanho desejado */
-     color: #3d3c3c;
-   }
- 
- </style>
+
+<script>
+export default {
+  data() {
+    return {
+      exibirMensagem: false,
+      form: {
+        // propriedades do formulario
+        nome: '',
+        cpf: '',
+        nomeAcompanhante: '',
+        cpfAcompanhante: '',
+        numeroQuarto: '',
+        dataCheckIn: '',
+        dataCheckOut: '',
+        status: []
+      }
+    };
+  },
+  methods: {
+    salvarFormulario() {
+      //  simular o salvamento aqui
+      this.onSubmit();
+
+      // mensagem de sucesso
+      this.exibirMensagem = true;
+
+      setTimeout(() => {
+        this.exibirMensagem = false;
+      }, 3000); // Esconde após 3 segundos
+    },
+    onSubmit() {
+      // Salvamento do formulário
+      alert("Reserva Realizada!");
+    }
+  }
+};
+</script>
+
+<style>
+.w-30 {
+  width: 30%;
+}
+
+/* Estilizando o placeholder */
+::placeholder {
+  font-style: italic;
+  font-size: 14px; /* Defina o tamanho desejado */
+  color: #3d3c3c;
+}
+</style>

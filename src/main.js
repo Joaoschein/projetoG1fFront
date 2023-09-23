@@ -23,5 +23,5 @@ const router = new VueRouter({
 
 new Vue({
   render: (h) => h(App),
-  router, // Adicionando o router ao Vue
+  router, // Adicionado o router ao Vue
 }).$mount('#app');
