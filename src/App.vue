@@ -27,7 +27,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1; /* imagem atrás do conteúdo */
+  z-index: -1; /* imagem que fica atrás do conteúdo */
 }
 
 /* mensagem "Bem-vindo" */
@@ -42,7 +42,7 @@
   background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
   padding: 20px;
   border-radius: 5px;
-  z-index: 1; /*mensagem sobre a imagem */
+  z-index: 1;
 }
 
 /* barra de navegação */
