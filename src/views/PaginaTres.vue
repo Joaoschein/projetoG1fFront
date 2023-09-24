@@ -22,7 +22,7 @@
     <h3 class="text-center mb-4">Consumos</h3>
     <div class="w-30">
       <label for="consumo">Valor total dos gastos:</label>
-      <input class="form-control" type="text" name="consumo" id="consumo" placeholder="Digite o consumo aqui">
+      <input class="form-control" type="text" name="consumo" id="consumo" placeholder="Digite o consumo aqui e as diárias">
     </div>
     <hr />
 

@@ -39,7 +39,7 @@
       </div>
 
       <div class="w-30">
-        <label for="dataCheckIn">Data de Check-in:</label>
+        <label for="dataCheckIn">Disponibilidade para Check-in:</label>
         <input class="form-control" type="date" name="dataCheckIn" id="dataCheckIn">
       </div>
     </div>
