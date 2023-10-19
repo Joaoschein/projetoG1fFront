@@ -1,113 +1,91 @@
 <template>
-  <div class="container mt-4">
-    <h3 class="text-center mb-4">Realize aqui a reserva do cliente</h3>
-    <hr />
-
-    <!-- Nome e CPF -->
-    <div class="d-flex justify-content-between mb-3">
-      <div class="w-30">
-        <label for="nome">Nome:</label>
-        <input class="form-control" type="text" name="nome" id="nome" placeholder="Digite o nome aqui">
+  <div>
+    <h1>Formulário de Reserva de Quarto</h1>
+    <form @submit.prevent="submitReservation">
+      <div class="form-group">
+        <label for="quarto">Número do Quarto:</label>
+        <input type="text" id="quarto" v-model="reservationData.quarto" required>
       </div>
-      <div class="w-30">
-        <label for="cpf">CPF:</label>
-        <input class="form-control" type="text" name="cpf" id="cpf" placeholder="000.000.000-00" inputmode="numeric" pattern="[0-9]*">
+      <div class="form-group">
+        <label for="cpf">CPF do Cliente:</label>
+        <input type="text" id="cpf" v-model="reservationData.cpf" required>
       </div>
-    </div>
-    <hr />
-
-    <!-- Dados do Acompanhante -->
-    <h4 class="text-center mb-4 custom-heading">Dados do Acompanhante</h4>
-    <div class="d-flex justify-content-between mb-3">
-      <div class="w-30">
-        <label for="nomeAcompanhante">Nome do Acompanhante:</label>
-        <input class="form-control" type="text" name="nomeAcompanhante" id="nomeAcompanhante" placeholder="Digite aqui o nome do acompanhante">
+      <div class="form-group">
+        <label for="chekin">Data de Check-in:</label>
+        <input type="date" id="chekin" v-model="reservationData.chekin" required>
       </div>
-      <div class="w-30">
-        <label for="cpfAcompanhante">CPF do Acompanhante:</label>
-        <input class="form-control" type="text" name="cpfAcompanhante" id="cpfAcompanhante" placeholder="000.000.000-00" inputmode="numeric" pattern="[0-9]*">
+      <div class="form-group">
+        <label for="chekout">Data de Check-out:</label>
+        <input type="date" id="chekout" v-model="reservationData.chekout" required>
       </div>
-    </div>
-    <hr />
-
-    <!-- Quarto escolhido e Check in -->
-    <h4 class="text-center mb-4 custom-heading">Quarto Escolhido</h4>
-    <div class="d-flex justify-content-between mb-3">
-      <div class="w-30">
-        <label for="numeroQuarto">Quarto 1, 2 ou 3:</label>
-        <input class="form-control" type="text" name="numeroQuarto" id="numeroQuarto" placeholder="Digite aqui o número do quarto" inputmode="numeric" pattern="[0-9]*">
-      </div>
-
-      <div class="w-30">
-        <label for="dataCheckIn">Disponibilidade para Check-in:</label>
-        <input class="form-control" type="date" name="dataCheckIn" id="dataCheckIn">
-      </div>
-    </div>
-
-    <!-- Campo de Check in Calendário-->
-    <div class="w-30">
-      <b-form-group>
-        <b-form-checkbox-group v-model="form.status">
-          <b-form-checkbox value="active">Check in</b-form-checkbox>
-        </b-form-checkbox-group>
-      </b-form-group>
-    </div>
-
-    <!-- Botões -->
-    <div class="d-flex justify-content-between mt-4">
-      <router-link to="/" class="btn btn-dark mx-2">Voltar</router-link>
-      <button type="button" class="btn btn-dark mx-auto" @click="salvarFormulario">Salvar Reserva</button>
-    </div>
+      <button type="submit">Reservar Quarto</button>
+    </form>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
-      exibirMensagem: false,
-      form: {
-        // propriedades do formulario
-        nome: '',
+      reservationData: {
+        quarto: '',
         cpf: '',
-        nomeAcompanhante: '',
-        cpfAcompanhante: '',
-        numeroQuarto: '',
-        dataCheckIn: '',
-        dataCheckOut: '',
-        status: []
+        chekin: '',
+        chekout: ''   
       }
+      
     };
+    
   },
+  
   methods: {
-    salvarFormulario() {
-      //  simular o salvamento aqui
-      this.onSubmit();
+    submitReservation() {
+      console.log('Dados da reserva a ser enviados:', this.reservationData)
+      const apiUrl = 'http://localhost:8081/cliente/reservar';
 
-      // mensagem de sucesso
-      this.exibirMensagem = true;
+      axios.put(apiUrl, this.reservationData)
+        .then(response => {
+          console.log('Reserva efetuada com sucesso:', response.data);
+          this.reservationData = {
+            quarto: '',
+            cpf: '',
+            chekin: '',
+            chekout: ''
+          };
+        })
+        .catch(error => {
+          console.error('Erro ao efetuar a reserva:', error);
+        });
 
-      setTimeout(() => {
-        this.exibirMensagem = false;
-      }, 3000); // Esconde após 3 segundos
-    },
-    onSubmit() {
-      // Salvamento do formulário
-      alert("Reserva Realizada!");
     }
   }
 };
 </script>
 
 <style>
-.w-30 {
-  width: 30%;
+.form-group {
+  margin-bottom: 20px;
 }
 
-/* Estilizando o placeholder */
-::placeholder {
-  font-style: italic;
-  font-size: 14px; /* Defina o tamanho desejado */
-  color: #3d3c3c;
+label {
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 </style>

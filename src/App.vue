@@ -11,7 +11,7 @@
       <router-view></router-view>
     </div>
 
-    <div class="centered-image" v-if="$route.path === '/'">
+    <div class="centered-image">
     <img src="@/assets/logo.jpg" alt="Imagem de boas-vindas" class="fullscreen-image" />
     <h3 class="text-center mb-4 welcome-message-top">Bem-vindo ao Hotel Anywhere </h3>
   </div>
@@ -19,7 +19,6 @@
 </template>
 
 <style>
-/* imagem tela cheia */
 .fullscreen-image {
   position: fixed;
   top: 0;
@@ -27,7 +26,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1; /* imagem que fica atrás do conteúdo */
+  z-index: -1; 
 }
 
 /* mensagem "Bem-vindo" */
@@ -45,7 +44,6 @@
   z-index: 1;
 }
 
-/* barra de navegação */
 nav {
   background-color: #333;
   color: white;
@@ -56,9 +54,9 @@ nav a {
   color: white;
   text-decoration: none;
   margin-right: 40px;
-
+}
   .welcome-message-top {
   margin-top: 40px; 
-}
+
 }
 </style>
